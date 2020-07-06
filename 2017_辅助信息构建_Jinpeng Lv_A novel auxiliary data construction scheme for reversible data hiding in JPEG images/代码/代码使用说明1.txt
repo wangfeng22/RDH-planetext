@@ -1,0 +1,6 @@
+Arith07.m  TestArith_me.m  算数编码
+construc_F.m  提取lsb
+emdding.m  Data_emdding.m 嵌入数据
+extract.m  Data_extract.m 恢复图像,提取数据
+location.m  求所选ac系数的坐标
+block_xiaoyin.m  求块效应最小的预测块

@@ -1,0 +1,12 @@
+GetR.m-----对32个位置进行优先级排序
+Get_AC1_LSBs.m----取得前n个AC1的最低有效位
+Getzeronum.m----统计每个块AC系数值为0的数目，并按降序排列
+Getexchange_table.m----得到交换表
+embed.m----嵌入函数，对位于(row,col)的块进行数据嵌入
+extract.m----提取恢复函数，对位于(row,col)的块进行数据提取
+Getside.m----将边信息(payload,Cv,exchange_table)从十进制数转为二进制数
+LSB_en.m----把边信息嵌入到AC1中
+Recover.m----提取数据，并恢复图像
+Extside.m----从side中提取payload,Cv,exchange_table
+GetZigzag.m----对一个矩阵进行zigzag编码，输出它的zigzag扫描序列
+AntiZigzag.m----根据输入的zigzag序列获得原来的矩阵
