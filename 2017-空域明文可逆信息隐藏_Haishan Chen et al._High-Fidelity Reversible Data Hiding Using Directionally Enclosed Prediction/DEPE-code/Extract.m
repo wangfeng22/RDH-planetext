@@ -1,0 +1,82 @@
+function [rdata,I2]=Extract(I1,step,side,lim)
+rdata=int32(zeros(1,lim));
+I2=I1;
+[PExh,PExv,PE]=DirectionalPredictionValue(I2);
+[row,col]=size(I2);
+lend=step;
+j=1;
+sign=1;
+flag=0;
+while(j<=col && side==1 && flag==0)
+    i=sign+1;
+    while(i<=row)
+        eh=PExh(i,j);
+        ev=PExv(i,j);
+          if((eh>=0&&ev>=0)||(eh<0&&ev<0))
+        if(abs(eh)<=abs(ev))
+            e=eh;
+        else
+            e=ev;
+        end
+       if(e==-1||e==0)
+           rdata(1,lend)=0;
+           lend=lend+1;
+       elseif(e==-2||e==1)
+           rdata(1,lend)=1;
+           lend=lend+1;
+       end
+        if(e<-1)
+            I2(i,j)=I1(i,j)+1;
+        elseif(e>0)
+            I2(i,j)=I1(i,j)-1;
+        end
+          end
+        i=i+2;
+        if lend>lim 
+            flag=1;
+            break;
+        end
+    end
+    j=j+1;
+    sign=1-sign;
+end
+[PExh,PExv,PE]=DirectionalPredictionValue(I2);
+lend=1;
+j=1;
+sign=0;
+flag=0;
+while(j<=col && flag==0)
+    i=sign+1;
+    while(i<=row)
+        eh=PExh(i,j);
+        ev=PExv(i,j);
+    if((eh>=0&&ev>=0)||(eh<0&&ev<0))
+        if(abs(eh)<=abs(ev))
+            e=eh;
+        else
+            e=ev;
+        end
+       if(e==-1||e==0)
+           rdata(1,lend)=0;
+           lend=lend+1;
+       elseif(e==-2||e==1)
+           rdata(1,lend)=1;
+           lend=lend+1;
+       end
+        if(e<-1)
+            I2(i,j)=I1(i,j)+1;
+        elseif(e>0)
+            I2(i,j)=I1(i,j)-1;
+        end
+    end
+        i=i+2;
+        if lend>lim 
+            flag=1;
+            break;
+        end
+    end
+    j=j+1;
+    sign=1-sign;
+end
+end
+

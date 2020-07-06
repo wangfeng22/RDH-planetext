@@ -1,0 +1,21 @@
+DESCRIPTION: This is the Matlab implementation of the paper "Reversible Data Hiding in Color Image with Grayscale Invariance" published on  IEEE Trans. Circuits and Systems for Video Technology.
+
+SIZE: The total size of the file is 0.472MB
+
+PLAYER INFORMATION: MATLAB R2014a on window 7 with 64 bits
+
+PACKING LIST:
+addPEs.m
+appraise_PSNR.m
+arith_encode.mexw64
+compresscoder.m
+cost.m
+embed.m
+getPEs.m
+LSpredictor.m
+main.m
+test.m
+Redeme.txt
+lena.png
+
+CONTACT INFORMATION: houdd@mail.ustc.edu.cn, zhangwm@ustc.edu.cn

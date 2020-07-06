@@ -1,0 +1,11 @@
+clear
+clc
+I=imread('lena.tiff');
+I=double(I);
+pixelnum=20000;
+data=randi([0,1],1,pixelnum);
+[I1,lx]=embed(I,data,pixelnum);
+[I2,rdata]=Reget(I1,lx,pixelnum);
+ans1=psnr(I,I1);
+ans2=isequal(I,I2);
+ans3=isequal(data,rdata);
